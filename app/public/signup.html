@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>MatchPoint</title>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
 	<!--Materialize CSS-->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
@@ -26,19 +28,21 @@
   
   <h5 class="center-align">
       
-    <form action="/action_page.php">
+    <form action="profile.html">
     <div class="container">
+
+    <input type = "text" placeholder="Enter Name" id="nameInput">
  
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" id="emailInput" required>
 
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" id="passwordInput" required>
 
 
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password" id="repeatPasswordInput" required>
     
 
     <div class="clearfix">
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <button class="btn waves-effect waves-light" type="submit" id="addUser">Submit
     <i class="material-icons right"></i>
   </button>
     </div>

@@ -1,3 +1,38 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyD9IENJxY48gZjiBjAxB7AELs1ytoqJay8",
+    authDomain: "match-point-project.firebaseapp.com",
+    databaseURL: "https://match-point-project.firebaseio.com",
+    projectId: "match-point-project",
+    storageBucket: "match-point-project.appspot.com",
+    messagingSenderId: "157562315014"
+};
+
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+var name = "";
+var email = "";
+var password = "";
+var repeatPassword="";
+
+$("addUser").on("click",function(){
+  name = $("#nameInput").val().trim();
+  email = $("#emailInput").val().trim();
+  password = $("#passwordInput").val().trim();
+  repeatPassword= $("#repeatPasswordInput").val().trim();
+
+  firebase.database().ref().push({
+    name: name,
+    email: email,
+    password: password,
+    dateAdded:firebase.database.ServerValue.TIMESTAMP
+  })
+
+});
+
+
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   
   var $this = $(this),

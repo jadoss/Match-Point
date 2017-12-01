@@ -1,14 +1,13 @@
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyD9IENJxY48gZjiBjAxB7AELs1ytoqJay8",
-    authDomain: "match-point-project.firebaseapp.com",
-    databaseURL: "https://match-point-project.firebaseio.com",
-    projectId: "match-point-project",
-    storageBucket: "match-point-project.appspot.com",
-    messagingSenderId: "157562315014"
-};
 
-firebase.initializeApp(config);
+var config = {
+    apiKey: "AIzaSyBwQX4zhQBOMWEuZX-gnoG8ZTi6r1T0HuM",
+    authDomain: "match-point-87dbf.firebaseapp.com",
+    databaseURL: "https://match-point-87dbf.firebaseio.com",
+    projectId: "match-point-87dbf",
+    storageBucket: "match-point-87dbf.appspot.com",
+    messagingSenderId: "312168236054"
+  };
+  firebase.initializeApp(config);
 
 var database = firebase.database();
 
@@ -17,24 +16,19 @@ var email = "";
 var password = "";
 var repeatPassword="";
 
-$("addUser").on("click",function(){
+var user;
 
-  event.preventDefault();
-
-
-  name = $("#nameInput").val().trim();
-  email = $("#emailInput").val().trim();
-  password = $("#passwordInput").val().trim();
-  repeatPassword= $("#repeatPasswordInput").val().trim();
-
-  database.ref().push({
-    name: name,
-    email: email,
-    password: password,
-    dateAdded:firebase.database.ServerValue.TIMESTAMP
-  });
-
+firebase.auth().onAuthStateChanged(function(signedInUser) {
+  if (signedInUser) {
+    // User is signed in.
+    user = signedInUser;
+    ;
+  } else {
+    // No user is signed in.
+  }
 });
+
+//authentication is the next set-up for DB 
 
 
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {

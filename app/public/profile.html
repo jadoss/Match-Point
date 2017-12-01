@@ -4,6 +4,7 @@
   <title>Profile</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
@@ -11,130 +12,99 @@
 
     <link rel="stylesheet" href="./css/map_style.css">
 
+    <link rel="stylesheet" href="./css/profile.css">
+
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
   <nav>
     <div class="nav-wrapper">
       <a href="index.html" class="brand-logo center">MatchPoint</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="badges.html">Upgrade to Premium</a></li>
-        <li><a href="collapsible.html">Settings</a></li>
-      </ul>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="badges.html">Upgrade to Premium</a></li>
+          <li><a href="collapsible.html">Settings</a></li>
+        </ul>
     </div>
   </nav>
 
 <body>
-
- <!-- Page Layout here -->
-    <div class="row">
-
-    <div class="col s7 push-s5">
-      <span class="flow-text">
-        <div class="section">
-          
+<style>
+body {
+    background-image: url("./images/background.jpg");
+}
+</style>
+<div class="container">
   <div class="row">
-        <div class="col s12 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/avatar.png">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
+    <div class="col-sm" id="profile">
+      <div class="card-image">
+        <img src="./images/avatar.png" height="150px" width="150px" alt="">
       </div>
-
-        </div>
-      </span>
-      </div>
-      
-      <div class="col s5 pull-s7">
+      <div class="card-content"></div>
+    </div>
+    
+    <div class="col-sm">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+ <!-- Page Layout here 
+    <div class="row">
+      <div class="col s12 m12" id="body">
         <span class="flow-text">
           <div class="section">
-          <div class="card">
-                  <div class="card-image">
-                      <img src="images/avatar.png">
-                      <span class="card-title">Card Title</span>
-                  </div>
-                   <div class="card-content">
+            <div class="row" id="profile_body">
+              <div class="col s5 pull-s7">
+                <div class="card-image">
+                  <img src="images/avatar.png" alt="">
+                  <span class="card-title">Card Title</span>
+                </div>    
+                    <div class="card-content">
                       <p>
-                      <ul class="collapsible" data-collapsible="accordion">
-                  <li>
-                    <div class="collapsible-header"><i class="material-icons">account_circle</i>About Me</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header"><i class="material-icons">folder_special</i>My Friends</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                  </li>
-                </ul>
-                </p>
-                  </div>
-                <div class="card-action">
-                  <a href="">This is a link</a>
+                        <ul class="collapsible" data-collapsible="accordion">
+                          <li>
+                            <div class="collapsible-header"><i class="material-icons"></i>About Me</div>
+                            <div class="collapsible-body"><span>Lorem</span></div>
+                          </li>
+                          <li>
+                            <div class="collapsible-header"><i class="material-icons">folder_special</i>My Friends</div>
+                            <div class="collapsible-body"><span>Lorem</span></div>
+                          </li>
+                        </ul>
+                      </p>
+                      <div class="card-action">
+                        <a href="">This is a link</a>
+                      </div>
+                    </div>    
+                <div class="row" id="map_body">
+                  <div class="col s5 pull-s7">
+                    <div class="map_card">
+                      <div class="map"></div>
+                    </div>
+                  </div>     
                 </div>
               </div>
-        </div>
-          
+            </div>
+          </div>
         </span>
       </div>
-
-      <div class="col s3">
-        <!-- Grey navigation panel -->
-      </div>
-
-      <div class="col s9">
-        <!-- Teal page content  -->
-      </div>
-
     </div>
-    <script type="text/javascript" src="./js/profile.js"></script>
+-->
+
+<script type="text/javascript" src="./js/profile.js"></script>
+<script src="./js/map_script.js"></script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSy7blxgGR9WBwNMMEudAw_j4GRSh2Fg&callback=initMap">
+</script>
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
 
 </body>
 
 
 </html>
 
-<script>
-
-  $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
-        
-</script>
-
-<style>
-
-body {
-    background-image: url("images/background.jpg");
-}
-
-nav{
-  background-color: #263238;
-}
-
-h5{
-  padding: 200px;
-}
-
-button{
-  background-color: #263238;
-}
 
 
-</style>
-
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSy7blxgGR9WBwNMMEudAw_j4GRSh2Fg&callback=initMap">
-    </script>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>

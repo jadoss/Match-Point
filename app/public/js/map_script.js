@@ -18,7 +18,7 @@ var customLabel = {
           $.getJSON('/api/all', function(data) {
             Array.prototype.forEach.call(data, function(marker) {
               var id = marker.id;
-              var name = marker.name;
+              var name = marker.title;
               var address = marker.address;
               var type = marker.type;
               var point = new google.maps.LatLng(
@@ -32,7 +32,7 @@ var customLabel = {
               infowincontent.appendChild(document.createElement('br'));
 
               var text = document.createElement('text');
-              text.textContent = address
+              text.textContent = ("This is at " + address) + " Join the Chat";
               infowincontent.appendChild(text);
               var icon = customLabel[type] || {};
               var marker = new google.maps.Marker({

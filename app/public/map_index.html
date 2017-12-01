@@ -2,9 +2,36 @@
 <html>
   <head>
     <link rel="stylesheet" href="./css/map_style.css">
+    <link rel="stylesheet" type="text/css" href="./css/chat-style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
   </head>
   <body>
     <div id="map"></div>
+
+    <div class="container">
+        <div class="header">
+            <h3>Match-Point Chat Lobby</h3>
+            <div>
+                Username: <span class="username"></span>
+            </div>
+        </div>
+        <div class="messages">
+            
+        </div>
+        <div class="stack-wrap"></div>
+        <div class="form">
+             <form>
+                <div class="form-inner">
+                    <input type="text" name="message" id='message-input'>
+                    <button id='send'><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                </div>
+             </form>
+        </div>
+    </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+  <script src="./js/chat.js"></script>
 
     
   <script src="./js/map_script.js"></script>

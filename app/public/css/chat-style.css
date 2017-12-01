@@ -1,0 +1,9 @@
+.messages{
+	border: 1px solid black;
+	height: 250px;
+	width: 160px;
+	overflow: auto;
+	display: flex;
+	flex-direction: column-reverse;
+	float: left;
+}

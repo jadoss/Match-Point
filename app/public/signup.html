@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
+
 <head>
+  <meta charset="UTF-8">
 	<title>MatchPoint</title>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 
 	<!--Materialize CSS-->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
@@ -31,18 +30,18 @@
     <form action="profile.html">
     <div class="container">
 
-    <input type = "text" placeholder="Enter Name" id="nameInput">
+    <input type = "text" placeholder="Enter Name" id="name-input">
  
-    <input type="text" placeholder="Enter Email" id="emailInput" required>
+    <input type="text" placeholder="Enter Email" id="email-input" required>
 
-    <input type="password" placeholder="Enter Password" id="passwordInput" required>
+    <input type="password" placeholder="Enter Password" id="password-input" required>
 
 
-    <input type="password" placeholder="Repeat Password" id="repeatPasswordInput" required>
+    <input type="password" placeholder="Repeat Password" id="repeat-password-input" required>
     
 
     <div class="clearfix">
-      <button class="btn waves-effect waves-light" type="submit" id="addUser">Submit
+      <button class="btn waves-effect waves-light" type="submit" id="add-user">Submit
     <i class="material-icons right"></i>
   </button>
     </div>
@@ -53,7 +52,56 @@
     </h5>
 </div>
 
-<script type="text/javascript" src="./js/app.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <script type="text/javascript" src="./js/app.js"></script>
+
+<!-- TESTING OUT FIREBASE LINKING -->
+
+
+ <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD9IENJxY48gZjiBjAxB7AELs1ytoqJay8",
+    authDomain: "match-point-project.firebaseapp.com",
+    databaseURL: "https://match-point-project.firebaseio.com",
+    projectId: "match-point-project",
+    storageBucket: "match-point-project.appspot.com",
+    messagingSenderId: "157562315014"
+  };
+  firebase.initializeApp(config);
+
+
+    var database = firebase.database();
+
+    var name = "";
+    var email = "";
+    var password = "";
+    var repeatPassword = "";
+
+
+    $("#add-user").on("click", function() {
+
+      event.preventDefault();
+
+      name = $("#name-input").val().trim();
+      email = $("#email-input").val().trim();
+      password = $("#password-input").val().trim();
+      repeatPassword = $("#repeat-password-input").val().trim();
+
+      database.ref().push({
+        name: name,
+        email: email,
+        password: password,
+        repeatPassword: repeatPassword
+      });
+
+    });
+
+  </script>
 
 </body>
 

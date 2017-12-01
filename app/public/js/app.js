@@ -18,17 +18,21 @@ var password = "";
 var repeatPassword="";
 
 $("addUser").on("click",function(){
+
+  event.preventDefault();
+
+
   name = $("#nameInput").val().trim();
   email = $("#emailInput").val().trim();
   password = $("#passwordInput").val().trim();
   repeatPassword= $("#repeatPasswordInput").val().trim();
 
-  firebase.database().ref().push({
+  database.ref().push({
     name: name,
     email: email,
     password: password,
     dateAdded:firebase.database.ServerValue.TIMESTAMP
-  })
+  });
 
 });
 

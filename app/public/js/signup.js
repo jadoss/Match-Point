@@ -1,4 +1,3 @@
-
 var config = {
     apiKey: "AIzaSyBwQX4zhQBOMWEuZX-gnoG8ZTi6r1T0HuM",
     authDomain: "match-point-87dbf.firebaseapp.com",
